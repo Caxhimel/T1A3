@@ -28,7 +28,8 @@ def call_menu():
         test = classes.Quiz()
         test._set_name()
         test._ask_questions()
-        print(test._tab_results())
+        test._tab_results()
+        print(test.user_type)
 
     elif selection == 2:
         print("dictionary")
