@@ -23,9 +23,10 @@ def call_menu():
 
     # When user enters a valid choice        
     if selection == 1:
-        test = classes.User()
+        test = classes.Quiz()
         test._set_name()
-        test._run_quiz()
+        test._ask_questions()
+        test._tab_results()
 
     elif selection == 2:
         print("dictionary")

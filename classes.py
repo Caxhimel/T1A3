@@ -1,6 +1,6 @@
 import csv
 
-class User:
+class Quiz:
     def __init__(self):
         self.user_scores = {"Fe": 0, "Fi": 0, "Te": 0, "Ti": 0, "Ne": 0, "Ni": 0, "Se": 0, "Si": 0}
         self.q_list = []
@@ -18,8 +18,8 @@ class User:
     def _set_name(self):
         self.user_name = input("Please enter your name: ")
 
-    def _run_quiz(self):
-        #ask questions
+    def _ask_questions(self):
+        # Ask questions
         while(self.iterator < len(self.q_list) - 1):
             print("Please enter a number from 1 - 5 to indicate how much you agree with each statement")
             # Print the question
@@ -29,5 +29,9 @@ class User:
             self.user_scores[self.q_list[self.iterator + 1]] = self.answer
             # Add 2 because we need to skip the answer sorting info for the question
             self.iterator += 2
+
+    # Tabulate results
+    def _tab_results(self):
+        self.best_function
 
 
