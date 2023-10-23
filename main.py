@@ -22,8 +22,8 @@ def call_menu():
     if selection == 1:
 
         test = classes.User()
-        test.set_name()
-
+        test._set_name()
+        test._run_quiz()
     elif selection == 2:
         print("dictionary")
 
@@ -31,6 +31,3 @@ def call_menu():
         quit()
         
 call_menu()
-# test = classes.User("Pete")
-# print(test.q_list[0])
-# print(test.q_list[1])
