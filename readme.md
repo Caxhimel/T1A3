@@ -88,8 +88,11 @@ completed project setup tasks - github, create readme
 create basic parts of program - menu, display questions, get answers
 ![screenshot](docs/screenshot%204.png)
 
-added extras section
+added extras section (add more questions)
 ![screenshot](docs/screenshot%205.png)
+
+added more to extras section (tabulation algorithm)
+![screenshot](docs/screenshot%206.png)
 
 
 ## Sources

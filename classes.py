@@ -32,6 +32,71 @@ class Quiz:
 
     # Tabulate results
     def _tab_results(self):
-        self.best_function
+        self.dom_function = max(self.user_scores, key = self.user_scores.get)
+        match self.dom_function:
+            case "Fe":
+                if self.user_scores["Ni"] > self.user_scores["Si"]:
+                    return "ENFJ"
+                elif self.user_scores["Si"] > self.user_scores["Ni"]:
+                    return "ESFJ"
+                else:
+                    return "You could be an ENFJ or ESFJ"
+                
+            case "Fi":
+                if self.user_scores["Ne"] > self.user_scores["Se"]:
+                    return "INFP"
+                elif self.user_scores["Se"] > self.user_scores["Ne"]:
+                    return "ISFP"
+                else:
+                    return "You could be an INFP or ISFP"
+                
+            case "Te":
+                if self.user_scores["Ni"] > self.user_scores["Si"]:
+                    return "ENTJ"
+                elif self.user_scores["Si"] > self.user_scores["Ni"]:
+                    return "ESTJ"
+                else:
+                    return "You could be an ENTJ or ESTJ"
+                
+            case "Ti":
+                if self.user_scores["Ne"] > self.user_scores["Se"]:
+                    return "INTP"
+                elif self.user_scores["Se"] > self.user_scores["Ne"]:
+                    return "ISTP"
+                else:
+                    return "You could be an INTP or ISTP"
+                
+            case "Ne":
+                if self.user_scores["Ti"] > self.user_scores["Fi"]:
+                    return "ENTP"
+                elif self.user_scores["Fi"] > self.user_scores["Ti"]:
+                    return "ESFP"
+                else:
+                    return "You could be an ENTP or ESFP"
+                
+            case "Ni":
+                if self.user_scores["Te"] > self.user_scores["Fe"]:
+                    return "INTJ"
+                elif self.user_scores["Fe"] > self.user_scores["Te"]:
+                    return "INFJ"
+                else:
+                    return "You could be an INTJ or INFJ"
+                
+            case "Se":
+                if self.user_scores["Ti"] > self.user_scores["Fi"]:
+                    return "ESTP"
+                elif self.user_scores["Fi"] > self.user_scores["Ti"]:
+                    return "ESFP"
+                else:
+                    return "You could be an ESTP or ESFP"
+                
+            case "Si":
+                if self.user_scores["Te"] > self.user_scores["Fe"]:
+                    return "ISTJ"
+                elif self.user_scores["Fe"] > self.user_scores["Te"]:
+                    return "ISFJ"
+                else:
+                    return "You could be an ISTJ or ISFJ"
+        
 
 

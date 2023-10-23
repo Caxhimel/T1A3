@@ -3,6 +3,8 @@
 #TODO make quit function work
 #TODO catch error in input entry, user shouldn't enter text
 #TODO make sure open files closed
+#TODO make tab_results handle multiple top functions
+#TODO cleanup question files
 #check style guide again
 
 import classes
@@ -21,12 +23,12 @@ def call_menu():
         print("Please enter the number below to make selection: ")
         selection = int(input())
 
-    # When user enters a valid choice        
+    # When user enters a valid choice
     if selection == 1:
         test = classes.Quiz()
         test._set_name()
         test._ask_questions()
-        test._tab_results()
+        print(test._tab_results())
 
     elif selection == 2:
         print("dictionary")
