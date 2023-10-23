@@ -19,6 +19,7 @@ class User:
         self.user_name = input("Please enter your name: ")
 
     def _run_quiz(self):
+        #ask questions
         while(self.iterator < len(self.q_list) - 1):
             print("Please enter a number from 1 - 5 to indicate how much you agree with each statement")
             # Print the question

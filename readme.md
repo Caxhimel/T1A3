@@ -75,6 +75,23 @@ A small reference section to describe the personality types and cognitive functi
 ### Export results
 Ability to save the test results into an external file.  The allows the user to access their results without having to do the test again.
 
+## Project management screenshots
+wrote design plan
+![screenshot](docs/screenshot%201.png)
+
+found and setup project management software
+![screenshot](docs/screenshot%202.png)
+
+completed project setup tasks - github, create readme
+![screenshot](docs/screenshot%203.png)
+
+create basic parts of program - menu, display questions, get answers
+![screenshot](docs/screenshot%204.png)
+
+added extras section
+![screenshot](docs/screenshot%205.png)
+
+
 ## Sources
 [^1]: Butt, J. (no date) Functional Analysis, Functional analysis of psychological types. Available at: https://typelogic.com/fa.html (Accessed: 22 October 2023). 
 

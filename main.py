@@ -7,6 +7,7 @@
 
 import classes
 
+# Main menu
 def call_menu():
     print("\nMain Menu\n")
     print("  1   Take MBTI test")
@@ -15,19 +16,23 @@ def call_menu():
 
     selection = 0
 
+    # Error handling, user can only enter number 1-3, retry if invalid
     while selection < 1 or selection > 3:
         print("Please enter the number below to make selection: ")
         selection = int(input())
-            
-    if selection == 1:
 
+    # When user enters a valid choice        
+    if selection == 1:
         test = classes.User()
         test._set_name()
         test._run_quiz()
+
     elif selection == 2:
         print("dictionary")
 
+    # Covers selection 3
     else:
-        quit()
+        # Just end the program
+        pass
         
 call_menu()
