@@ -24,6 +24,9 @@ class Quiz:
     def _output_results(self):
         answer = ""
         answer = input("Would you like a copy of the results, y or n: ")
+        while answer != "y" and answer != "n":
+                print("answer invalid")
+                answer = input("Would you like a copy of the results, y or n: ")
         if answer == "y":
             with open("test_results.txt", "w") as result_file:
                 result_file.write(f"Name: {self.user_name}\n")
@@ -38,12 +41,8 @@ class Quiz:
                 result_file.write(f"Se: {self.user_scores["Se"]} \n")
                 result_file.write(f"Si: {self.user_scores["Si"]} \n")
             print("Results in file: test_results.txt")
-                
-        elif answer == "n":
-            pass
         else:
-            answer = input("Invalid selection.  Would you like a copy of the results, y or n: ")
-
+            pass
 
     def _ask_questions(self):
         # Ask questions

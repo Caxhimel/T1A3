@@ -1,13 +1,13 @@
-Name: cax
+Name: vsa
 Your type could be:
-INFP
-ISFJ
+ISTP
+ISTJ
 Your cognitive function scores are: 
-Fe: 2 
-Fi: 3 
-Te: 1 
-Ti: 2 
+Fe: 3 
+Fi: 2 
+Te: 4 
+Ti: 5 
 Ne: 2 
-Ni: 1 
-Se: 1 
-Si: 3 
+Ni: 3 
+Se: 4 
+Si: 5 
