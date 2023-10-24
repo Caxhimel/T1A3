@@ -21,17 +21,50 @@ class Quiz:
     def _set_name(self):
         self.user_name = input("Please enter your name: ")
 
+    def _output_results(self):
+        answer = ""
+        answer = input("Would you like a copy of the results, y or n: ")
+        if answer == "y":
+            with open("test_results.txt", "w") as result_file:
+                result_file.write(f"Name: {self.user_name}\n")
+                result_file.write(f"{self.user_type}")
+                result_file.write(f"Your cognitive function scores are: \n")
+                result_file.write(f"Fe: {self.user_scores["Fe"]} \n")
+                result_file.write(f"Fi: {self.user_scores["Fi"]} \n")
+                result_file.write(f"Te: {self.user_scores["Te"]} \n")
+                result_file.write(f"Ti: {self.user_scores["Ti"]} \n")
+                result_file.write(f"Ne: {self.user_scores["Ne"]} \n")
+                result_file.write(f"Ni: {self.user_scores["Ni"]} \n")
+                result_file.write(f"Se: {self.user_scores["Se"]} \n")
+                result_file.write(f"Si: {self.user_scores["Si"]} \n")
+            print("Results in file: test_results.txt")
+                
+        elif answer == "n":
+            pass
+        else:
+            answer = input("Invalid selection.  Would you like a copy of the results, y or n: ")
+
+
     def _ask_questions(self):
         # Ask questions
         while(self.iterator < len(self.q_list) - 1):
             print("Please enter a number from 1 - 5 to indicate how much you agree with each statement")
             # Print the question
             print(self.q_list[self.iterator])
-            self.answer = input()
-            # When user answers a question, store answer in the correct category
-            self.user_scores[self.q_list[self.iterator + 1]] = self.answer
-            # Add 2 because we need to skip the answer sorting info for the question
-            self.iterator += 2
+            while True:
+                try:
+                    self.answer = int(input())
+                    break
+                except ValueError:
+                    print("Please enter a number from 1 - 5")
+            # If user answered 1-5
+            if self.answer > 0 and self.answer < 6:
+                # When user answers a question, store answer in the correct category
+                self.user_scores[self.q_list[self.iterator + 1]] = self.answer
+                # Add 2 because we need to skip the answer sorting info for the question
+                self.iterator += 2
+            else:
+                print("\nInvalid answer")
 
     # Tabulate results
     def _tab_results(self):
@@ -56,7 +89,7 @@ class Quiz:
                     if self.user_scores["Ne"] > self.user_scores["Se"]:
                         self.user_type +=  "INFP\n"
                     elif self.user_scores["Se"] > self.user_scores["Ne"]:
-                        self.user_type +=  "ISF\nP"
+                        self.user_type +=  "ISFP \n"
                     else:
                         self.user_type += "INFP or ISFP\n"
                 
@@ -109,7 +142,7 @@ class Quiz:
                         self.user_type += "ISTJ or ISFJ\n"
                 
                 case default:
-                    self.user_type =  "MBTI cannot work out your type"
+                    self.user_type =  "MBTI cannot determine your type"
         
 
 

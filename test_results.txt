@@ -1,0 +1,13 @@
+Name: cax
+Your type could be:
+INFP
+ISFJ
+Your cognitive function scores are: 
+Fe: 2 
+Fi: 3 
+Te: 1 
+Ti: 2 
+Ne: 2 
+Ni: 1 
+Se: 1 
+Si: 3 

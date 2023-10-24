@@ -94,6 +94,9 @@ added extras section (add more questions)
 added more to extras section (tabulation algorithm)
 ![screenshot](docs/screenshot%206.png)
 
+finished tabulate results
+![screenshot](docs/screenshot%207.png)
+
 
 ## Sources
 [^1]: Butt, J. (no date) Functional Analysis, Functional analysis of psychological types. Available at: https://typelogic.com/fa.html (Accessed: 22 October 2023). 

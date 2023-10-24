@@ -5,6 +5,7 @@
 #TODO make sure open files closed
 #TODO make tab_results handle multiple top functions
 #TODO cleanup question files
+#TODO check if file opens successfully
 #check style guide again
 
 import classes
@@ -19,18 +20,24 @@ def call_menu():
     selection = 0
 
     # Error handling, user can only enter number 1-3, retry if invalid
-    while selection < 1 or selection > 3:
-        print("Please enter the number below to make selection: ")
-        selection = int(input())
+    while True:
+        try: 
+            selection = int(input())
+            break
+        except ValueError:
+            print("Please enter a number from 1 - 5")
 
-    # When user enters a valid choice
+    # When user has entered a valid choice
+    # Run the test
     if selection == 1:
         test = classes.Quiz()
         test._set_name()
         test._ask_questions()
         test._tab_results()
         print(test.user_type)
-
+        test._output_results()
+        
+    # Learn about MBTI
     elif selection == 2:
         print("dictionary")
 
