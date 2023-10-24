@@ -1,4 +1,5 @@
 import csv
+import tools
 
 class Quiz:
     def __init__(self):
@@ -46,24 +47,20 @@ class Quiz:
 
     def _ask_questions(self):
         # Ask questions
+        print("\nPlease enter a number from 1 - 5 to indicate how much you agree with each statement")
+
         while(self.iterator < len(self.q_list) - 1):
-            print("Please enter a number from 1 - 5 to indicate how much you agree with each statement")
             # Print the question
             print(self.q_list[self.iterator])
-            while True:
-                try:
-                    self.answer = int(input())
-                    break
-                except ValueError:
-                    print("Please enter a number from 1 - 5")
-            # If user answered 1-5
-            if self.answer > 0 and self.answer < 6:
-                # When user answers a question, store answer in the correct category
-                self.user_scores[self.q_list[self.iterator + 1]] = self.answer
-                # Add 2 because we need to skip the answer sorting info for the question
-                self.iterator += 2
-            else:
-                print("\nInvalid answer")
+            self.answer = tools.validate_num(1, 5)
+            # When user answers a question, store answer in the correct category
+            self.user_scores[self.q_list[self.iterator + 1]] = self.answer
+            # Add 2 because we need to skip the answer sorting info for the question
+            self.iterator += 2
+            # Just formatting
+            print("")
+            # else:
+            #     print("\nInvalid answer")
 
     # Tabulate results
     def _tab_results(self):
