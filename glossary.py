@@ -20,6 +20,13 @@ class Glossary:
             print("  2  Introvert types")
 
             answer = tools.validate_num(1, 2)
+            # Make list of extroverted types
+            if answer == 1:
+                tools.make_type_list(self.types_list, "I")
+                answer = tools.validate_num(1, 8)
+
+            else:
+                tools.make_type_list(self.types_list, "E")
 
 
         else:
