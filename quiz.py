@@ -9,6 +9,8 @@ class Quiz:
         self.dom_function = ""
         self.dom_func_list = []
         self.user_type = "Your type could be:\n"
+        self.current_date = tools.get_date()
+        self.current_time = tools.get_time()
 
         # Read in questions from external file
         self.q_list = tools.read_csv_file("docs/questions.csv")
@@ -24,6 +26,8 @@ class Quiz:
                 answer = input("Would you like a copy of the results, y or n: ")
         if answer == "y":
             with open("test_results.txt", "w") as result_file:
+                result_file.write(f"Date: {self.current_date}\n")
+                result_file.write(f"Test taken at: {self.current_time}\n")
                 result_file.write(f"Name: {self.user_name}\n")
                 result_file.write(f"{self.user_type}")
                 result_file.write(f"Your cognitive function scores are: \n")

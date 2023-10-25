@@ -2,6 +2,8 @@
 
 import json
 import csv
+from datetime import date
+from datetime import datetime
 
 # Validate numerical input
 def validate_num(min: int, max: int):
@@ -67,3 +69,9 @@ def read_csv_file(filename):
             # Which score the question relates to
             q_list.append(row[1])
         return q_list
+
+def get_date():
+    return date.today()
+
+def get_time():
+    return datetime.now().strftime("%H:%M:%S")
