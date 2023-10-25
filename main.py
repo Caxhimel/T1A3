@@ -13,7 +13,6 @@ def call_menu():
 
         selection = tools.validate_num(1,3)
 
-        # When user has entered a valid choice
         # Run the test
         if selection == 1:
             test = quiz.Quiz()

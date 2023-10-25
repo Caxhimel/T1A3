@@ -1,4 +1,3 @@
-import csv
 import tools
 
 class Quiz:
@@ -55,10 +54,6 @@ class Quiz:
             self.user_scores[self.q_list[self.iterator + 1]] = self.answer
             # Add 2 because we need to skip the answer sorting info for the question
             self.iterator += 2
-            # Just formatting
-            print("")
-            # else:
-            #     print("\nInvalid answer")
 
     # Tabulate results
     def _tab_results(self):
@@ -69,7 +64,7 @@ class Quiz:
 
         for value in self.dom_func_list:
             self.dom_function = value
-            # Would like to find a "DRY"er solution for this.
+
             match self.dom_function:
                 case "Fe":
                     if self.user_scores["Ni"] > self.user_scores["Si"]:
