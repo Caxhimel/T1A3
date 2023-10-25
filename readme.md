@@ -100,6 +100,9 @@ finished tabulate results
 finished output results
 ![screenshot](docs/screenshot%208.png)
 
+finished glossary feature (Learn about MBTI)
+![screenshot](docs/screenshot%209.png)
+
 
 ## Sources
 [^1]: Butt, J. (no date) Functional Analysis, Functional analysis of psychological types. Available at: https://typelogic.com/fa.html (Accessed: 22 October 2023). 
