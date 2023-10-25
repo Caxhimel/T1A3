@@ -26,14 +26,15 @@ def make_type_list():
         num += 1
 
 def make_function_list():
-    types_dict = read_json_file("docs/types.json")
+    types_list = read_csv_file("docs/cog_functions.csv")
     print("\nWhich cognitive function would you like to know more about? ")
     num = 1
-    for key in types_dict:
-        print(f"  {num}  {key}")
-        num += 1
+    for iter in types_list:
+        if len(iter) < 3:
+            print(f"  {num}  {iter}")
+            num += 1
 
-def get_type(val: int, dictionary: dict):
+def get_cog_type(val: int, dictionary: dict):
         # Creating a list using the keys from created dictionary
         # Need something I can refer to by index
         type_list = []
@@ -41,6 +42,15 @@ def get_type(val: int, dictionary: dict):
             type_list.append(keys)
         print(dictionary[type_list[val -1]])
         print("\nType descriptions from psychologyjunkie.com")
+
+def get_cog_function(val: int, dictionary: dict):
+        # Creating a list using the keys from created dictionary
+        # Need something I can refer to by index
+        type_list = []
+        for keys in dictionary.keys():
+            type_list.append(keys)
+        print(dictionary[type_list[val -1]])
+        print("\nType descriptions from truity.com")
 
 def read_json_file(filename):
     with open(filename) as t:
