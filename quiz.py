@@ -1,70 +1,85 @@
+"""Handles running the quiz function"""
 import tools
 
 class Quiz:
+    """Stores information to handle the quiz function"""
     def __init__(self):
+        # Store user's scores across the 8 cognitive functions.
         self.user_scores = {"Fe": 0, "Fi": 0, "Te": 0, "Ti": 0, "Ne": 0, "Ni": 0, "Se": 0, "Si": 0}
+        # Store questions to be read in from external file.
         self.q_list = []
+        # For moving through question list.
         self.iterator = 0
-        self.dom_function = ""
+        # Store the user's strongest scores.
+        # List is used because user may have multiple top scores.
         self.dom_func_list = []
+        # String to store results of user's score calculations.
+        # This string will be added to.
         self.user_type = "Your type could be:\n"
+        # Date and time test taken. Used in output.
         self.current_date = tools.get_date()
         self.current_time = tools.get_time()
 
-        # Read in questions from external file
+        # Read in questions from external file.
         self.q_list = tools.read_csv_file("docs/questions.csv")
 
+    # Asks user for their name, used in output.
     def _set_name(self):
         self.user_name = input("Please enter your name: ")
 
+    # Creates a text file to store user's results.
     def _output_results(self):
-        answer = ""
         answer = input("Would you like a copy of the results, y or n: ")
         while answer != "y" and answer != "n":
                 print("answer invalid")
                 answer = input("Would you like a copy of the results, y or n: ")
         if answer == "y":
-            with open("test_results.txt", "w") as result_file:
-                result_file.write(f"Date: {self.current_date}\n")
-                result_file.write(f"Test taken at: {self.current_time}\n")
-                result_file.write(f"Name: {self.user_name}\n")
-                result_file.write(f"{self.user_type}")
-                result_file.write(f"Your cognitive function scores are: \n")
-                result_file.write(f"Fe: {self.user_scores["Fe"]} \n")
-                result_file.write(f"Fi: {self.user_scores["Fi"]} \n")
-                result_file.write(f"Te: {self.user_scores["Te"]} \n")
-                result_file.write(f"Ti: {self.user_scores["Ti"]} \n")
-                result_file.write(f"Ne: {self.user_scores["Ne"]} \n")
-                result_file.write(f"Ni: {self.user_scores["Ni"]} \n")
-                result_file.write(f"Se: {self.user_scores["Se"]} \n")
-                result_file.write(f"Si: {self.user_scores["Si"]} \n")
+            with open("test_results.txt", "w") as res_file:
+                # Write date to result file.
+                res_file.write(f"Date: {self.current_date}\n")
+                # Write time test taken to result file.
+                res_file.write(f"Test taken at: {self.current_time}\n")
+                # Write user's name to result file.
+                res_file.write(f"Name: {self.user_name}\n")
+                # Write list of user's potential types to result file.
+                res_file.write(f"{self.user_type}")
+                
+                # Write user's scores to result file.
+                res_file.write(f"Your cognitive function scores are: \n")
+                for key, value in self.user_scores.items():
+                    res_file.write(f"{key} {value} \n")
+            # Tell user the name of the file.        
             print("Results in file: test_results.txt")
-        else:
-            pass
 
     def _ask_questions(self):
-        # Ask questions
-        print("\nPlease enter a number from 1 - 5 to indicate how much you agree with each statement")
+        # Ask questions.
+        print("\nPlease enter a number from 1 - 5 "
+              "to indicate how much you agree with each statement\n")
 
         while(self.iterator < len(self.q_list) - 1):
-            # Print the question
+            # Print the question.
             print(self.q_list[self.iterator])
             self.answer = tools.validate_num(1, 5)
-            # When user answers a question, store answer in the correct category
+            # When user answers a question, store answer in the correct category.
             self.user_scores[self.q_list[self.iterator + 1]] = self.answer
-            # Add 2 because we need to skip the answer sorting info for the question
+            # Add 2 because we need to skip the answer sorting info in the list.
             self.iterator += 2
 
-    # Tabulate results
+    # Tabulate results.
     def _tab_results(self):
+        # Find the highest score, may be multiple keys.
         max_score = max(self.user_scores.values())
+        # Store these scores in a list, so we can process them all.
         for key, value in self.user_scores.items():
             if value == max_score:
                 self.dom_func_list.append(key)
 
+        # Go through list created above.
         for value in self.dom_func_list:
             self.dom_function = value
 
+            # Switch statement determines which MBTI type is possible.
+            # Then stores result in user_type.
             match self.dom_function:
                 case "Fe":
                     if self.user_scores["Ni"] > self.user_scores["Si"]:
@@ -129,7 +144,8 @@ class Quiz:
                         self.user_type += "ISFJ\n"
                     else:
                         self.user_type += "ISTJ or ISFJ\n"
-                
+
+                # If above fails, user type doesn't follow rules of MBTI
                 case default:
                     self.user_type =  "MBTI cannot determine your type"
         
