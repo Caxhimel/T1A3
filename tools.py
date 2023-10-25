@@ -34,22 +34,21 @@ def make_function_list():
             print(f"  {num}  {iter}")
             num += 1
 
-def get_cog_type(val: int, dictionary: dict):
+def get_cog_type(val: int, cog_dict: dict):
         # Creating a list using the keys from created dictionary
-        # Need something I can refer to by index
+        # Need something I can refer to by index with only needed info
         type_list = []
-        for keys in dictionary.keys():
+        for keys in cog_dict.keys():
             type_list.append(keys)
-        print(dictionary[type_list[val -1]])
+
+        print(cog_dict[type_list[val - 1]])
         print("\nType descriptions from psychologyjunkie.com")
 
-def get_cog_function(val: int, dictionary: dict):
-        # Creating a list using the keys from created dictionary
-        # Need something I can refer to by index
-        type_list = []
-        for keys in dictionary.keys():
-            type_list.append(keys)
-        print(dictionary[type_list[val -1]])
+def get_cog_function(val: int, cog_list: list):
+        for iter in cog_list:
+             if len(iter) < 3:
+                cog_list.remove(iter)
+        print(cog_list[val-1])
         print("\nType descriptions from truity.com")
 
 def read_json_file(filename):
@@ -59,7 +58,7 @@ def read_json_file(filename):
     return types_dict
 
 def read_csv_file(filename):
-    with open("docs/questions.csv") as quest_file:
+    with open(filename) as quest_file:
         read = csv.reader(quest_file)
         q_list = []
         for row in read:

@@ -39,5 +39,4 @@ def call_menu():
             learn._start_gloss()
         else:
             is_running = False
-        
 call_menu()
