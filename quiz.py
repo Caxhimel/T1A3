@@ -11,13 +11,7 @@ class Quiz:
         self.user_type = "Your type could be:\n"
 
         # Read in questions from external file
-        with open("docs/questions.csv") as quest_file:
-            read = csv.reader(quest_file)
-            for self.row in read:
-                # The question itself
-                self.q_list.append(self.row[0])
-                # Which score the question relates to
-                self.q_list.append(self.row[1])
+        self.q_list = tools.read_csv_file("docs/questions.csv")
 
     def _set_name(self):
         self.user_name = input("Please enter your name: ")
