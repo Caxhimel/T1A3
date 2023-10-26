@@ -76,32 +76,37 @@ A small reference section to describe the personality types and cognitive functi
 Ability to save the test results into an external file.  The allows the user to access their results without having to do the test again.
 
 ## Project management screenshots
-wrote design plan
-![screenshot](docs/screenshot%201.png)
+Wrote design plan
+![Alt text](<docs/Screenshot 1.png>)
 
-found and setup project management software
-![screenshot](docs/screenshot%202.png)
+Found and setup project management software
+![Screenshot 2](<docs/Screenshot 2.png>)
 
-completed project setup tasks - github, create readme
-![screenshot](docs/screenshot%203.png)
+Completed project setup tasks - github, create readme
+![Screenshot 3](<docs/Screenshot 3.png>)
 
-create basic parts of program - menu, display questions, get answers
-![screenshot](docs/screenshot%204.png)
+Create basic parts of program - menu, display questions, get answers
+![Screenshot 4](<docs/Screenshot 4.png>)
 
-added extras section (add more questions)
-![screenshot](docs/screenshot%205.png)
+Added extras section (add more questions)
+![Screenshot 5](<docs/Screenshot 5.png>)
 
-added more to extras section (tabulation algorithm)
-![screenshot](docs/screenshot%206.png)
+Added more to extras section (tabulation algorithm)
+![Screenshot 6](<docs/Screenshot 6.png>)
 
-finished tabulate results
-![screenshot](docs/screenshot%207.png)
+Finished tabulate results
+![Screenshot 7](<docs/Screenshot 7.png>)
 
-finished output results
-![screenshot](docs/screenshot%208.png)
+Finished output results
+![Screenshot 8](<docs/Screenshot 8.png>)
 
-finished glossary feature (Learn about MBTI)
-![screenshot](docs/screenshot%209.png)
+Finished glossary feature (Learn about MBTI)
+![Screenshot 9](<docs/Screenshot 9.png>)
+
+Finished making bash script<br>
+Renamed task 6 to better reflect task<br>
+Added to task 9 to improve bash script
+![Screenshot 10](<docs/Screenshot 10.png>)
 
 
 ## Sources
