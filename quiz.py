@@ -54,7 +54,9 @@ class Quiz:
     def _ask_questions(self):
         # Ask questions.
         print("\nPlease enter a number from 1 - 5 "
-              "to indicate how much you agree with each statement\n")
+              "to indicate how much each statement represents you.")
+        print("1 = Doesn't sound like me at all")
+        print("5 = This is very much me")
 
         while(self.iterator < len(self.q_list) - 1):
             # Print the question.
