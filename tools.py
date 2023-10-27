@@ -14,12 +14,12 @@ def validate_num(min: int, max: int) -> int:
 
         # If user tries to enter a letter.
         except ValueError:
-            print("Data is not a number, please try again")
+            print("Input is not a number, please try again")
             continue
 
         # Check number is within range as specified.
         if data < min or data > max:
-            print("Data invalid, please try again")
+            print("Input is outside of range, please try again")
             continue
         else:
             return data
