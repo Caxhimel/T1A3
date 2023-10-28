@@ -111,6 +111,10 @@ Added to task 9 to improve bash script
 Finished documentation
 ![Screenshot 21](<docs/Screenshot 21.png>)
 
+Finished presentation
+![Screenshot 22](<docs/Screenshot 22.png>)
+
+
 ## Help Documentation
 ### Hardware requirements
 As the Python Software Foundation does not officially list any hardware requirements, the following suggestions are sourced externally.
